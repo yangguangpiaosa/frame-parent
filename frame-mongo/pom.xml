@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>com.ibm.dst.frame</groupId>
+    <artifactId>frame-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>frame-mongo</artifactId>
+  <packaging>war</packaging>
+  
+  <name>frame-mongo</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <springframework.version>4.0.3.RELEASE</springframework.version>
+    <springdata.version>1.6.1.RELEASE</springdata.version>
+  	<mongojavadriver.version>2.12.4</mongojavadriver.version>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<scope>test</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>tomcat-servlet-api</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>tomcat-jsp-api</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+	<!-- <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${springframework.version}</version>
+	</dependency> -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+	
+	<!-- Spring Data for MongoDB -->
+	<dependency>
+		<groupId>org.springframework.data</groupId>
+		<artifactId>spring-data-mongodb</artifactId>
+		<version>${springdata.version}</version>
+	</dependency>
+
+	<!-- Java MongoDB Driver -->
+	<dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongo-java-driver</artifactId>
+		<version>${mongojavadriver.version}</version>
+	</dependency>
+	
+  </dependencies>
+  
+  <build>
+  
+    <finalName>frame-mongo</finalName>
+    
+    <plugins>
+    	<plugin>
+    		<groupId>org.apache.tomcat.maven</groupId>
+    		<artifactId>tomcat7-maven-plugin</artifactId>
+    		<version>2.1</version>
+    		<configuration>
+    			<path>/mongo</path>
+    			<port>8088</port>
+    		</configuration>
+    	</plugin>
+    </plugins>
+    
+  </build>
+  
+</project>
