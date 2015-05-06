@@ -1,6 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
   <modelVersion>4.0.0</modelVersion>
   
   <parent>
@@ -9,17 +10,15 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <artifactId>frame-mongo</artifactId>
+  <artifactId>frame-ssh</artifactId>
   <packaging>war</packaging>
   
-  <name>frame-mongo</name>
+  <name>frame-ssh</name>
   <url>http://maven.apache.org</url>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <springframework.version>4.0.3.RELEASE</springframework.version>
-    <springdata.version>1.6.1.RELEASE</springdata.version>
-    <mongojavadriver.version>2.12.4</mongojavadriver.version>
   </properties>
   
   <dependencies>
@@ -61,25 +60,10 @@
 		<version>${springframework.version}</version>
 	</dependency>
 	
-	<!-- Spring Data for MongoDB -->
-	<dependency>
-		<groupId>org.springframework.data</groupId>
-		<artifactId>spring-data-mongodb</artifactId>
-		<version>${springdata.version}</version>
-	</dependency>
-
-	<!-- Java MongoDB Driver -->
-	<dependency>
-		<groupId>org.mongodb</groupId>
-		<artifactId>mongo-java-driver</artifactId>
-		<version>${mongojavadriver.version}</version>
-	</dependency>
-	
   </dependencies>
-  
   <build>
   
-    <finalName>frame-mongo</finalName>
+    <finalName>frame-ssh</finalName>
     
     <plugins>
     	<plugin>
@@ -87,12 +71,11 @@
     		<artifactId>tomcat7-maven-plugin</artifactId>
     		<version>${tomcatplugin.version}</version>
     		<configuration>
-    			<path>/mongo</path>
+    			<path>/ssh</path>
     			<port>8088</port>
     		</configuration>
     	</plugin>
     </plugins>
     
   </build>
-  
 </project>

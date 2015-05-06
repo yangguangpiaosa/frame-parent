@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   
   <modelVersion>4.0.0</modelVersion>
 
@@ -15,10 +15,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <log4j.version>1.2.17</log4j.version>
 	<junit.version>4.11</junit.version>
+	<tomcat.version>7.0.61</tomcat.version>
+	<tomcatplugin.version>2.2</tomcatplugin.version>
   </properties>
   
   <modules>
   	<module>frame-mongo</module>
+    <module>frame-ssh</module>
   </modules>
 
   <dependencyManagement>
@@ -122,13 +125,14 @@
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-servlet-api</artifactId>
-			<version>7.0.37</version>
+			<version>${tomcat.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jsp-api</artifactId>
-			<version>7.0.37</version>
+			<version>${tomcat.version}</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
   </dependencyManagement>
