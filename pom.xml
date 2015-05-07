@@ -14,12 +14,13 @@
   <description>A Framework Aggregation Project.</description>
   <organization>
   	<name>opensourceteam</name>
+  	<url>https://github.com/opensourceteam</url>
   </organization>
   
   <scm>
-  	<connection>scm:git:git@github.com:yangguangpiaosa/frame-parent.git</connection>
-  	<developerConnection>scm:git:git@github.com:yangguangpiaosa/frame-parent.git</developerConnection>
-  	<url>git@github.com:yangguangpiaosa/frame-parent.git</url>
+  	<connection>scm:git:git://github.com:yangguangpiaosa/frame-parent.git</connection>
+  	<developerConnection>scm:git:git://github.com:yangguangpiaosa/frame-parent.git</developerConnection>
+  	<url>git://github.com:yangguangpiaosa/frame-parent.git</url>
   </scm>
 
   <properties>
