@@ -18,9 +18,10 @@
   </organization>
   
   <scm>
-  	<connection>scm:git:git://github.com:yangguangpiaosa/frame-parent.git</connection>
-  	<developerConnection>scm:git:git://github.com:yangguangpiaosa/frame-parent.git</developerConnection>
-  	<url>git://github.com:yangguangpiaosa/frame-parent.git</url>
+  	<connection>scm:git:https://github.com/yangguangpiaosa/frame-parent.git</connection>
+    <developerConnection>scm:git:https://github.com/yangguangpiaosa/frame-parent.git</developerConnection>
+    <url>https://github.com/yangguangpiaosa/frame-parent</url>
+    <tag>HEAD</tag>
   </scm>
 
   <properties>
@@ -148,5 +149,22 @@
 		</dependency>
 	</dependencies>
   </dependencyManagement>
+  
+  <build>
+  
+  	<finalName>frame</finalName>
+  	
+  	<plugins>
+  		<plugin>
+	      <groupId>org.apache.maven.plugins</groupId>
+	      <artifactId>maven-release-plugin</artifactId>
+	      <version>2.5</version>
+	      <configuration>
+	        <tagBase>https://github.com/yangguangpiaosa/frame-parent/releases/</tagBase>
+	      </configuration>
+	    </plugin>
+  	</plugins>
+    
+  </build>
   
 </project>
