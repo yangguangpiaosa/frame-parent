@@ -10,6 +10,17 @@
 
   <name>frame-parent</name>
   <url>http://maven.apache.org</url>
+  
+  <description>A Framework Aggregation Project.</description>
+  <organization>
+  	<name>opensourceteam</name>
+  </organization>
+  
+  <scm>
+  	<connection>scm:git:git@github.com:yangguangpiaosa/frame-parent.git</connection>
+  	<developerConnection>scm:git:git@github.com:yangguangpiaosa/frame-parent.git</developerConnection>
+  	<url>git@github.com:yangguangpiaosa/frame-parent.git</url>
+  </scm>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -136,14 +147,5 @@
 		</dependency>
 	</dependencies>
   </dependencyManagement>
-  
-  <description>A Framework Aggregation Project.</description>
-  <organization>
-  	<name>opensourceteam</name>
-  </organization>
-  <scm>
-  	<connection>git@github.com:yangguangpiaosa/frame-parent.git</connection>
-  	<developerConnection>git@github.com:yangguangpiaosa/frame-parent.git</developerConnection>
-  </scm>
   
 </project>
