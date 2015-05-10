@@ -11,17 +11,75 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:component-scan base-package="com.ibm.dst.frame.ssh.*">
+	<context:component-scan base-package="com.ibm.dst.frame.ssh">
 		<context:include-filter type="regex" expression="com.ibm.dst.frame.ssh.*.controller"/>
 	</context:component-scan>
 	
-    <mvc:annotation-driven enable-matrix-variables="true"/>
+	<!-- self defined validator -->
+    <mvc:annotation-driven enable-matrix-variables="true" validator="validator"/>
+    
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+	    <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+	    <!-- default: classpath ValidationMessages.properties -->
+	    <property name="validationMessageSource" ref="messageSource"/>
+	</bean>
+	
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	    <property name="basenames">
+	        <list>
+	            <value>classpath:message</value>
+	            <value>classpath:org/hibernate/validator/ValidationMessages</value>
+	        </list>
+	    </property>
+	    <property name="useCodeAsDefaultMessage" value="false"/>
+	    <property name="defaultEncoding" value="UTF-8"/>
+	    <property name="cacheSeconds" value="60"/>
+	</bean>
+    
+    <!-- For static resources: solution 1 -->
+    <mvc:default-servlet-handler/>
+    
+    <!-- For static resources: solution 2 -->
+    <!-- <mvc:resources mapping="/images/**" location="/static/images/" cache-period="31556926"/>
+    <mvc:resources mapping="/js/**" location="/static/js/" cache-period="31556926"/>
+    <mvc:resources mapping="/css/**" location="/static/css/" cache-period="31556926"/> -->
+    
+    <!-- <mvc:interceptors>
+    	<bean class="com.ibm.dst.frame.ssh.test.interceptor.TestInterceptor"/>
+	</mvc:interceptors> -->
+	
+	<mvc:interceptors>
+		<bean class="com.ibm.dst.frame.ssh.common.interceptor.LogInterceptor"/>
+		<mvc:interceptor>
+      		<mvc:mapping path="/helloworld*"/>
+      		<mvc:mapping path="/helloworld/*"/>
+        	<bean class="com.ibm.dst.frame.ssh.test.interceptor.TestInterceptor"></bean>
+    	</mvc:interceptor>
+    	<mvc:interceptor>
+      		<mvc:mapping path="/user*"/>
+      		<mvc:mapping path="/user/*"/>
+        	<bean class="com.ibm.dst.frame.ssh.user.interceptor.UserInterceptor"></bean>
+    	</mvc:interceptor>
+	</mvc:interceptors>
     
     <bean id="viewResolver"
 	        class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 	    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
 	    <property name="prefix" value="/jsp/"/>
 	    <property name="suffix" value=".jsp"/>
+	</bean>
+	
+	<!-- Global error -->
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	    <property name="defaultErrorView">
+	        <value>/error/error</value>
+	    </property>
+	    <property name="defaultStatusCode">
+	        <value>500</value>
+	    </property>
+	<property name="warnLogCategory">
+	        <value>org.springframework.web.servlet.handler.SimpleMappingExceptionResolver</value>
+	    </property>
 	</bean>
     
 </beans>

@@ -14,11 +14,11 @@ public class HelloWorld {
 	private Test test = null;
 	
 	@RequestMapping("/helloworld")
-    public String helloWorld(Model model) {
-		System.out.println("Hello World !");
+    public String helloWorld(String name, Model model) {
+		System.out.println("Hello " + name + " !");
 		test.out();
-        model.addAttribute("message", "Hello World!");
-        return "helloworld";
+        model.addAttribute("message", "Hello " + name + " !");
+        return "test/helloworld";
     }
 	
 }
