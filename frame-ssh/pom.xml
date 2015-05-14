@@ -21,38 +21,67 @@
   </properties>
   
   <dependencies>
+  	
+  	<!-- log4j and slf4j -->
     <dependency>
 		<groupId>log4j</groupId>
 		<artifactId>log4j</artifactId>
 	</dependency>
 	<dependency>
 	    <groupId>org.slf4j</groupId>
-	    <artifactId>slf4j-api</artifactId>
-	    <version>1.7.12</version>
-	</dependency>
-	<dependency>
-	    <groupId>org.slf4j</groupId>
 	    <artifactId>slf4j-log4j12</artifactId>
 	    <version>1.7.12</version>
 	</dependency>
+	
+	<!-- junit -->
 	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
 		<scope>test</scope>
 	</dependency>
-	<!-- <dependency>
-		<groupId>org.apache.tomcat</groupId>
-		<artifactId>tomcat-servlet-api</artifactId>
-	</dependency> -->
-	<dependency>
-		<groupId>org.apache.tomcat</groupId>
-		<artifactId>tomcat-jsp-api</artifactId>
-	</dependency>
+	
+	<!-- spring mvc -->
 	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-webmvc</artifactId>
 		<version>${springframework.version}</version>
 	</dependency>
+	
+	<!-- spring orm -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-orm</artifactId>
+		<version>${springframework.version}</version>
+	</dependency>
+	
+	<!-- hibernate validator -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-validator</artifactId>
+	    <version>4.3.2.Final</version>
+	</dependency>
+	
+	<!-- hibernate -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>4.3.9.Final</version>
+	</dependency>
+	
+	<!-- HSQLDB -->
+	<dependency>
+	    <groupId>org.hsqldb</groupId>
+	    <artifactId>hsqldb</artifactId>
+	    <version>2.3.2</version>
+	</dependency>
+	
+	<!-- tomcat jsp api -->
+	<dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>tomcat-jsp-api</artifactId>
+	</dependency>
+	
+	<!-- jstl and taglibs -->
 	<dependency>
 		<groupId>jstl</groupId>
 		<artifactId>jstl</artifactId>
@@ -62,11 +91,6 @@
 		<groupId>taglibs</groupId>
 		<artifactId>standard</artifactId>
 		<version>1.1.2</version>
-	</dependency>
-	<dependency>
-	    <groupId>org.hibernate</groupId>
-	    <artifactId>hibernate-validator</artifactId>
-	    <version>4.3.2.Final</version>
 	</dependency>
 	
   </dependencies>

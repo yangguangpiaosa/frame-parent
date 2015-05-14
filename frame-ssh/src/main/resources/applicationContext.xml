@@ -16,4 +16,6 @@
 		<context:exclude-filter type="regex" expression="com.ibm.dst.frame.ssh.*.controller"/>
 	</context:component-scan>
 	
+	<import resource="applicationContext-database.xml"/>
+	
 </beans>

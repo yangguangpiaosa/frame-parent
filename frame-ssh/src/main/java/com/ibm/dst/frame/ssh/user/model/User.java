@@ -1,13 +1,24 @@
 package com.ibm.dst.frame.ssh.user.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
+@Entity
+@Table(name="user")
 public class User {
+	
+	@Id
+	@GeneratedValue(generator="idGenerator")
+	@GenericGenerator(name="idGenerator",strategy="uuid")
 	private String id = null;
 	
 	@NotBlank(message="{user.name.blank}")
