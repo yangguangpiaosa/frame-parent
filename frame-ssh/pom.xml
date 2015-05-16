@@ -99,6 +99,7 @@
     <finalName>frame-ssh</finalName>
     
     <plugins>
+    	<!-- tomcat7 plugin -->
     	<plugin>
     		<groupId>org.apache.tomcat.maven</groupId>
     		<artifactId>tomcat7-maven-plugin</artifactId>
