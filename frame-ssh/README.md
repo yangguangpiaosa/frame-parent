@@ -23,6 +23,7 @@ mvn exec:java -Dexec.mainClass="org.hsqldb.util.DatabaseManagerSwing"
 ========
 ###Run it:
 We imagine that your environment is already there, so let's begin.
+
 Move to the directory of project, then
 Command Line:
 ```javascript
