@@ -1,8 +1,8 @@
 ##Framework
 
-* Struts2 ()
-* Spring (4.1.6.RELEASE)
-* Mybatis ()
+* Struts2 (2.3.24)
+* Spring (3.0.5.RELEASE, Struts2 depends on this version)
+* Mybatis (3.2.8)
 
 ========
 ###Start HSQLDB database:
