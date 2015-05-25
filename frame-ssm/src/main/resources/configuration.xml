@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		
+		<typeAlias alias="employee" type="com.ibm.dst.frame.ssm.test.model.Employee"/>
+		
+	</typeAliases>
+	
+</configuration>

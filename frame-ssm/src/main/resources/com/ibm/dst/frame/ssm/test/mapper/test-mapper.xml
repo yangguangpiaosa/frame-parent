@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ibm.dst.frame.ssm.test.dao.TestDao">
+
+	<select id="getEmpList" parameterType="java.util.Map" resultType="employee">
+		<![CDATA[
+			select emp_no empNo,
+			       emp_name empName,
+			       emp_salary empSalary,
+			       hiredate hiredate
+			from employee
+		]]>
+	</select>
+
+</mapper>

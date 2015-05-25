@@ -18,7 +18,7 @@
 	<param-value>frame-ssm.root</param-value>
   </context-param>
   
-  <!-- <context-param>
+  <context-param>
 	<param-name>contextConfigLocation</param-name>
 	<param-value>classpath*:applicationContext*.xml</param-value>
   </context-param>
@@ -35,6 +35,56 @@
   </context-param>
   <listener>
     <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-  </listener> -->
+  </listener>
+  
+  <!-- filter, for invalid url -->
+  <filter>
+    <filter-name>RequestFilter</filter-name>
+   	<filter-class>com.ibm.dst.frame.ssm.common.filter.RequestFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>RequestFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <!-- struts -->
+  <!-- <filter>
+  	<filter-name>struts2-cleanup</filter-name>
+  	<filter-class>org.apache.struts2.dispatcher.ActionContextCleanUp</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts2-cleanup</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping> -->
+  
+  <filter>
+  	<filter-name>struts2</filter-name>
+  	<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>struts2</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <session-config>
+	<session-timeout>15</session-timeout>
+  </session-config>
+  
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/page/common/404.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>400</error-code>
+  	<location>/page/common/error.jsp</location>
+  </error-page>
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/page/common/error.jsp</location>
+  </error-page>
+  
+  <welcome-file-list>
+    <welcome-file>commonconf/index.action</welcome-file>
+  </welcome-file-list>
   
 </web-app>
