@@ -2,3 +2,4 @@
 /frame-mongo/target
 /frame-ssh/target
 /frame-ssm/target
+/frame-batch/target

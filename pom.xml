@@ -36,6 +36,7 @@
   	<module>frame-mongo</module>
     <module>frame-ssh</module>
     <module>frame-ssm</module>
+    <module>frame-batch</module>
   </modules>
 
   <dependencyManagement>
