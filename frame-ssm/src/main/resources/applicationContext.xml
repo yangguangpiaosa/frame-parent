@@ -42,6 +42,7 @@
 	<bean id="scannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.ibm.dst.frame.ssm"/>
 		<property name="markerInterface" value="com.ibm.dst.frame.ssm.common.base.dao.BaseMapper"/>
+		<property name="annotationClass" value="com.ibm.dst.frame.ssm.common.annotation.Mapper"></property>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
 	</bean>
 	

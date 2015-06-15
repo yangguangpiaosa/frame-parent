@@ -8,4 +8,5 @@ import com.ibm.dst.frame.ssm.test.model.Employee;
 
 public interface TestService extends BaseService {
 	public List<Employee> getEmpList() throws BaseException;
+	public List<Employee> getEmpListByMapper() throws BaseException;
 }

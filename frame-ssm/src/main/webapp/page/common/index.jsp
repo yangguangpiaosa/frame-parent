@@ -13,6 +13,7 @@
 </head>
 <body>
 <h1>Test...It Works!</h1><br/>
-<a href="<%=basePath%>test/testAction?op=test">test</a>
+<a href="<%=basePath%>test/testAction?op=test">test</a><br>
+<a href="<%=basePath%>test/testAction?op=testMapper">test mapper</a>
 </body>
 </html>

@@ -26,6 +26,8 @@ public class TestAction extends BaseAction {
 	protected String dispatch() throws Exception {
 		if("test".equals(super.method)) {
 			return test();
+		} else if("testMapper".equals(super.method)) {
+			return testMapper();
 		}
 		return null;
 	}
@@ -38,6 +40,16 @@ public class TestAction extends BaseAction {
 			e.printStackTrace();
 		}
 		//HttpServletRequest request = ServletActionContext.getRequest();
+		return "test";
+	}
+	
+	public String testMapper() {
+		try {
+			logger.info("Action.............");
+			empList = testService.getEmpListByMapper();
+		} catch (BaseException e) {
+			e.printStackTrace();
+		}
 		return "test";
 	}
 
