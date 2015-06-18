@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
   <parent>
     <groupId>com.ibm.dst.frame</groupId>
     <artifactId>frame-parent</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
   </parent>
   
   <artifactId>frame-batch</artifactId>
@@ -78,18 +77,15 @@
 					</goals>
 					<configuration>
 						<transformers>
-							<transformer
-								implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+							<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 								<manifestEntries>
 									<Main-Class>com.ibm.dst.frame.batch.core.Main</Main-Class>
 								</manifestEntries>
 							</transformer>
-							<transformer
-								implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
 								<resource>META-INF/spring.handlers</resource>
 							</transformer>
-							<transformer
-								implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+							<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
 								<resource>META-INF/spring.schemas</resource>
 							</transformer>
 						</transformers>
@@ -102,8 +98,7 @@
   
 </project>
 
-<!-- <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<!-- <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ibm.dst.frame</groupId>
