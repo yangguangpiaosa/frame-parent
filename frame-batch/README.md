@@ -2,6 +2,7 @@
 
 * Spring (4.0.5.RELEASE, Batch depends on this version)
 * Spring Batch (3.0.4.RELEASE)
+* Spring Boot (1.2.4.RELEASE)
 
 ========
 ###Run it:
