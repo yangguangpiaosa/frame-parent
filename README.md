@@ -14,3 +14,4 @@
 * 2015-05-05  Add SSH(SpringMVC, Spring and Hibernate).
 * 2015-05-17  Add SSM(Struts2, Spring and Mybatis).
 * 2015-05-26  Add Batch(Spring and Spring Batch).
+* 2016-02-03  Add jFinal.

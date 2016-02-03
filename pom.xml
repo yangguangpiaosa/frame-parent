@@ -37,6 +37,7 @@
     <module>frame-ssh</module>
     <module>frame-ssm</module>
     <module>frame-batch</module>
+    <module>frame-jfinal</module>
   </modules>
 
   <dependencyManagement>
