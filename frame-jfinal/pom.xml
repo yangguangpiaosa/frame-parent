@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>com.ibm.dst.frame</groupId>
+    <artifactId>frame-parent</artifactId>
+    <version>0.0.4-SNAPSHOT</version>
+  </parent>
+  
+  <artifactId>frame-jfinal</artifactId>
+  <packaging>war</packaging>
+  
+  <name>frame-jfinal</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+  
+  	<!-- log4j and slf4j -->
+    <dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+	</dependency>
+	
+    <!-- junit -->
+	<dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<scope>test</scope>
+	</dependency>
+	
+	<!-- commons -->
+	<dependency>
+	    <groupId>commons-dbcp</groupId>
+	    <artifactId>commons-dbcp</artifactId>
+	    <version>1.4</version>
+	</dependency>
+	
+	<!-- tomcat jsp api -->
+	<dependency>
+		<groupId>org.apache.tomcat</groupId>
+		<artifactId>tomcat-jsp-api</artifactId>
+	</dependency>
+	
+	<!-- HSQLDB -->
+	<dependency>
+	    <groupId>org.hsqldb</groupId>
+	    <artifactId>hsqldb</artifactId>
+	    <version>2.3.2</version>
+	</dependency>
+	
+  </dependencies>
+  <build>
+  
+    <finalName>frame-jfinal</finalName>
+    
+    <plugins>
+    	<!-- tomcat7 plugin -->
+    	<plugin>
+    		<groupId>org.apache.tomcat.maven</groupId>
+    		<artifactId>tomcat7-maven-plugin</artifactId>
+    		<version>${tomcatplugin.version}</version>
+    		<configuration>
+    			<path>/jfinal</path>
+    			<port>8088</port>
+    		</configuration>
+    	</plugin>
+    </plugins>
+    
+  </build>
+</project>
