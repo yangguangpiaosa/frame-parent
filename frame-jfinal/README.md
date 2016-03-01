@@ -1,6 +1,6 @@
 ##Framework
 
-* jFinal ()
+* jFinal (2.2)
 
 ========
 ###Start HSQLDB database:
